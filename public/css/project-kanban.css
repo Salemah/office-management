@@ -1,0 +1,129 @@
+.drag-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+.board {
+    position: relative;
+    overflow-x: scroll;
+}
+.board-column {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0 10px;
+    z-index: 1;
+}
+.board-column.muuri-item-releasing {
+    z-index: 2;
+}
+.board-column.muuri-item-dragging {
+    z-index: 3;
+    cursor: move;
+}
+.board-column-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.board-column-header {
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    padding: 0 20px;
+    text-align: center;
+    background: #333;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+@media (max-width: 600px) {
+    .board-column-header {
+        text-indent: -1000px;
+    }
+}
+.board-column.ongoing .board-column-header {
+    background: #4A9FF9;
+}
+.board-column.not-started .board-column-header {
+    background: #f9944a;
+}
+.board-column.completed .board-column-header {
+    background: #2ac06d;
+}
+.board-column.cancel .board-column-header {
+    background: #bf33549f;
+}
+.board-column-content-wrapper {
+    position: relative;
+    padding: 8px;
+    background: #f0f0f0;
+    height: calc(100vh - 90px);
+    overflow-y: scroll;
+    border-radius: 0 0 5px 5px;
+}
+.board-column-content {
+    position: relative;
+    min-height: 100%;
+}
+.board-item {
+    position: absolute;
+    width: calc(100% - 16px);
+    margin: 8px;
+    padding-right: 5px;
+}
+.board-item.muuri-item-releasing {
+    z-index: 9998;
+}
+.board-item.muuri-item-dragging {
+    z-index: 9999;
+    cursor: move;
+}
+.board-item.muuri-item-hidden {
+    z-index: 0;
+}
+.board-item-content {
+    position: relative;
+    padding: 8px ;
+    background: #fff;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 1px 3px 0 rgba(0,0,0,0.2);
+    box-shadow: 0px 1px 3px 0 rgba(0,0,0,0.2);
+}
+@media (max-width: 600px) {
+    .board-item-content {
+        text-align: center;
+    }
+    .board-item-content span {
+        display: none;
+    }
+}
+/*  */
+.ongoing-column{
+    background: rgba(209, 205, 205, 0.349);
+    border-radius: 6px;
+    padding: 2px;
+}
+.ongoing-header{
+    border-radius: 8px 8px 0 0;
+    padding: 4px;
+    background: #008cea;
+    color: white;
+    text-align: center;
+}
+
+#ongoing-project{
+    color: #000000;
+    text-align: center;
+}
+.ongoing-card{
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 12px;
+}
